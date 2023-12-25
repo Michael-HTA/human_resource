@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name">Name</label>
@@ -18,6 +18,10 @@
         <div class="mb-3">
             <label for="email">Email</label>
             <input type="text" name="email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="image">Image</label>
+            <input type="file" name="image" class="form-control">
         </div>
         <div class="mb-3">
             <label>Role</label>

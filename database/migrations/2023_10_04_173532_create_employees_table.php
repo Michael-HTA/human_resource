@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('address');
             $table->integer('phone');
             $table->text('email');
+            $table->string('image')->nullable();
             $table->integer('role_id');
             $table->integer('casual_leave');
             $table->integer('annual_leave');

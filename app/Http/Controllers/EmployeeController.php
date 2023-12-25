@@ -34,7 +34,19 @@ class EmployeeController extends Controller
     }
     // add and register function
     public function register(){
+
+        //todo->put validation for image and data
+        $validater = request()->validate([
+            'name' => 'required|string',
+            'address' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'role_id' => 'required',
+            'image' => 'required|image|max:2mb'
+        ]);
+
         $data = new Employee();
+        $data->image = request()->file('image')->store();
         $data->name = request()->name;
         $data->address = request()->address;
         $data->phone = request()->phone;
