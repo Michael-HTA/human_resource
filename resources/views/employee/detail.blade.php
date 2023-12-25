@@ -17,7 +17,7 @@
             </div>
             <div class="col-2">
                 <div class="card">
-                    <img src="{{asset('storage'. $employee->image)}}" alt="Profile">
+                    <img src="{{asset('storage/'. $employee->image)}}" alt="Profile">
                     <div class="card-title">Profile</div>
                 </div>
             </div>
