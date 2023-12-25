@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <a class="border border-2 rounded-pill btn btn-primary" href="{{url("/employee/list")}}">Home</a>
+                <a class="border border-2 rounded-pill btn btn-primary" href="{{url('/employee/list')}}">Home</a>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -17,15 +17,15 @@
             </div>
             <div class="col-2">
                 <div class="card">
-                    <img src="" alt="Profile">
+                    <img src="{{asset('storage'. $employee->image)}}" alt="Profile">
                     <div class="card-title">Profile</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <a class="ms-2 float-end btn btn-primary" href="{{url("employee/update/$employee->id")}}">Update</a>
-                <a href="{{url("employee/delete/$employee->id")}}" class="float-end btn btn-danger">Delete</a>
+                <a class="ms-2 float-end btn btn-primary" href='{{url("employee/update/$employee->id")}}'>Update</a>
+                <a href='{{url("employee/delete/$employee->id")}}' class="float-end btn btn-danger">Delete</a>
             </div>
         </div>
     </div>

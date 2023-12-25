@@ -56,6 +56,7 @@ class EmployeeController extends Controller
         $data->annual_leave = $data->getAnnualLeave();
         $data->medical_leave = $data->getMedicalLeave();
         $data->save();
+        
         return redirect('/employee/list');
     }
 
