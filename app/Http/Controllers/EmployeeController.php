@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
@@ -79,13 +80,21 @@ class EmployeeController extends Controller
             'phone'=>'required',
             'email'=>'required',
             'role_id'=>'required',
+            'image' => 'image'
         ]);
 
         if($validator->failed()){
             return back()->withErrors($validator);
         }
 
+
         $data = Employee::find($id);
+
+        if(request()->hasFile('image')){
+            Storage::delete($data->image);
+            $data->image = request()->file('image')->store();
+        }
+
         $data->name = request()->name;
         $data->address = request()->address;
         $data->phone = request()->phone;

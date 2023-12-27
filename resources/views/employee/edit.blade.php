@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name">Name</label>
@@ -29,6 +29,11 @@
 
             <label for="medical_leave">Medical Leave</label>
             <input type="number" placeholder="Medical Leave" name="medical_leave" class="form-control" value="{{ $employee->medical_leave }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="image">Image</label>
+            <input type="file" name="image" class="form-control">
         </div>
 
         <div class="mb-3">
