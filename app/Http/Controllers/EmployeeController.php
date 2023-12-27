@@ -42,7 +42,7 @@ class EmployeeController extends Controller
             'phone' => 'required',
             'email' => 'required|email',
             'role_id' => 'required',
-            'image' => 'required|image|max:2mb'
+            'image' => 'required|image'
         ]);
 
         $data = new Employee();
@@ -56,7 +56,7 @@ class EmployeeController extends Controller
         $data->annual_leave = $data->getAnnualLeave();
         $data->medical_leave = $data->getMedicalLeave();
         $data->save();
-        
+
         return redirect('/employee/list');
     }
 
