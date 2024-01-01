@@ -5,7 +5,7 @@
         @csrf
         <div class="mb-3">
             <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" value="{{ $employee->name }}">
+            <input type="text" name="name" class="form-control" value="{{$employee->name}}">
         </div>
         <div class="mb-3">
             <label for="address">Address</label>

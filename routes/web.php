@@ -25,19 +25,19 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 // main page
-Route::get('employee/list',[EmployeeController::class,"showEmployee"]);
-Route::get('employee/detail/{id}',[EmployeeController::class,"detail"]);
+Route::get('/employee/list',[EmployeeController::class,"showEmployee"]);
+Route::get('/employee/detail/{id}',[EmployeeController::class,"detail"]);
 
 //employee delete
-Route::get('/employee/delete/{id}',[EmployeeController::class,"delete"]);
+Route::get('/employee/delete/{id}',[EmployeeController::class,"delete"])->name('employee.delete');
 
 //employee edit and update
-Route::get('employee/update/{id}',[EmployeeController::class,"edit"]);
-Route::post('employee/update/{id}',[EmployeeController::class,"update"]);
+Route::get('/employee/update/{id}',[EmployeeController::class,"edit"])->name("employee.edit");
+Route::post('/employee/update/{id}',[EmployeeController::class,"update"])->name('employee.update');
 
 // employee create
-Route::get('employee/add',[EmployeeController::class,'add']);
-Route::post('employee/add',[EmployeeController::class,'register']);
+Route::get('/employee/add',[EmployeeController::class,'add']);
+Route::post('/employee/add',[EmployeeController::class,'register']);
 
 
 Auth::routes();
