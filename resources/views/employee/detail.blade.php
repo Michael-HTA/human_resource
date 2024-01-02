@@ -8,7 +8,27 @@
                         <a href='{{url("/employee/list")}}' class="btn btn-primary rounded-5">Home</a>
                     </div>
                     <div>
-                        <a href='{{url("employee/delete/$employee->id")}}' class="btn btn-danger rounded-5">Delete</a>
+                        <button type="button" class="btn btn-danger rounded-5" data-bs-toggle="modal"
+                            data-bs-target="#delete">
+                            Delete
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p>Are you sure to delete this?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                            <a href='{{url("employee/delete/$employee->id")}}' class="btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <a href='{{route("employee.edit", ["id" => $employee->id])}}' class="btn btn-success rounded-5">Update</a>
                     </div>
                 </nav>
@@ -22,7 +42,7 @@
                 </div>
                 <div class="col-2 d-flex justify-content-center">
                     <img src="{{asset('storage/'.$employee->image)}}" class="image-fluid" alt="Profile"
-                        style="height: 120px; width: 150px;">
+                        style="height: 150px; width: 180px;">
                 </div>
             </div>
         </div>

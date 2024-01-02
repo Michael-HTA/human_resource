@@ -30,6 +30,7 @@ class EmployeeController extends Controller
     //delete function
     public function delete($id){
         $data = Employee::find($id);
+        Storage::delete($data->image);
         $data->delete();
         return redirect('/employee/list');
     }
