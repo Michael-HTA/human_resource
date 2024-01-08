@@ -8,3 +8,5 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 }
+
+'''helelelewerlwejr;lwejrlwejr;wlejr;wlejr;weljr;weljr;weljrwejr;lwjrlwejr''
